@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    transactions:
+      driver-class-name: "org.postgresql.Driver"
+      username: "accenture_app"
+      password: "accenture"
+      url: "jdbc:postgresql://localhost:5432/accenture"
