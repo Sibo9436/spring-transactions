@@ -1,18 +1,25 @@
 package com.sibo.transactions.dto;
 
 import com.sibo.transactions.model.Currency;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.math.BigInteger;
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Data
 public class TransactionDto {
-    private String transactionID;
+    private Integer transactionId;
+    @NotNull
     private BigInteger amount;
+    @NotNull
     private Currency currency;
-    private LocalDateTime timestamp;
-    private String senderID;
-    private String receiverID;
+    private Instant timestamp;
+    @NotNull
+    private Integer senderId;
+    @NotNull
+    private Integer receiverId;
     private String status;
+    private String description;
+
 }

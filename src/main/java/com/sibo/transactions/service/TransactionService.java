@@ -24,17 +24,28 @@ public class TransactionService {
     public List<TransactionDto> getTransactions() throws Exception{
         return transactionRepository.getAll().stream().map(transactionMapper::entityToDto).collect(Collectors.toList());
     }
-    public TransactionDto getTransactionById(Long txId) throws Exception{
+    public Optional<TransactionDto> getTransactionById(Integer txId) throws Exception{
         Optional<TransactionEntity> txEntity = transactionRepository.get(txId);
-        return txEntity.map(transactionMapper::entityToDto).orElse(new TransactionDto());
+        return txEntity.map(transactionMapper::entityToDto);
     }
 
-    //TODO: qui sarebbe carino mettere un cursore Andrea, vedi di ricordartelo
-    /*
-    public List<TransactionDto> filterTransactions(TransactionDto filter, PaginationDto pagination) throws Exception{
-        return Collections.emptyList();
+    public void addTransaction(TransactionDto dto) throws Exception {
+        TransactionEntity entity = transactionMapper.dtoToEntity(dto);
+        transactionRepository.create(entity);
     }
-    public TransactionDto updateTransaction()
-    
-     */
+
+    public void updateTransaction(TransactionDto dto, int transactionId) throws Exception{
+        TransactionEntity entity = transactionMapper.dtoToEntity(dto);
+        transactionRepository.update(entity, transactionId);
+    }
+
+    public void deleteTransaction(int transactionId) throws Exception{
+        transactionRepository.delete(transactionId);
+    }
+
+    public List<TransactionDto> filter(TransactionDto params) {
+        List<TransactionEntity> filtered = transactionRepository.getFiltered(transactionMapper.dtoToEntity(params));
+        return filtered.stream().map(transactionMapper::entityToDto).collect(Collectors.toList());
+    }
+
 }

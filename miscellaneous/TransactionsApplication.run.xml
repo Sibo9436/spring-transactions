@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="TransactionsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ACTIVE_PROFILES" />
+    <envs>
+      <env name="DB_URL" value="localhost" />
+    </envs>
+    <module name="transactions" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.sibo.transactions.TransactionsApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

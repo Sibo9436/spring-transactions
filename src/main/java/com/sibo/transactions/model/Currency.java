@@ -2,6 +2,7 @@ package com.sibo.transactions.model;
 
 public enum Currency {
     EUR,
+    GBP,
     USD,
     JPY,
     RMB

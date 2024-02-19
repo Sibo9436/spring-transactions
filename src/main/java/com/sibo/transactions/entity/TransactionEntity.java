@@ -4,15 +4,16 @@ import com.sibo.transactions.model.Currency;
 import lombok.Data;
 
 import java.math.BigInteger;
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Data
 public class TransactionEntity {
-    private Long transactionID;
+    private Integer transactionId;
     private BigInteger amount;
     private Currency currency;
-    private LocalDateTime timestamp;
-    private Long senderId;
-    private Long receiverId;
+    private Instant timestamp;
+    private Integer senderId;
+    private Integer receiverId;
     private String status;
+    private String description;
 }

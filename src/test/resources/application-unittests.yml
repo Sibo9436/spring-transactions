@@ -1,0 +1,8 @@
+DB_URL: localhost
+spring:
+  datasource:
+    transactions:
+      driver-class-name: "org.h2.Driver"
+      url: "jdbc:h2:mem:mydb"
+  flyway:
+    enabled: false
