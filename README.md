@@ -9,7 +9,9 @@ Come prima cosa è necessaria una build del progetto con `mvn clean package`
 Eseguire i comandi `docker compose build` e `docker compose up -d`, `docker compose down` per arrestare i container.
 
 ---
-Una volta up and running sarà possibile raggiungere il servizio sulla porta [8080](http://localhost:8080/swagger-ui.html), per poter osserver le tabelle comodamente 
-è fornita anche un'istanza di [adminer](http://localhost:8090/).
+Una volta up and running sarà possibile raggiungere il servizio sulla porta 8080
 
-Il database è inizializzato con dei dati aleatori.
+Sono esposte [swagger-ui](http://localhost:8080/swagger-ui.html) per semplificare chiamate di test e un'istanza di [adminer](http://localhost:8090/) per poter osserver le tabelle comodamente.
+è fornita anche 
+
+Il database è già inizializzato con dei dati aleatori.
